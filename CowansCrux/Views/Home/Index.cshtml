@@ -1,0 +1,19 @@
+﻿@using CowansCrux.Models
+@model CowansCrux.Models.Webcomic
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <center>@Html.ActionLink("First", "First", "Webcomic") @Html.ActionLink("Prev", "Prev", "Webcomic", null, new { id = Model.id }) <h1>Cowan's Crux</h1> @Html.ActionLink("Next", "Next", "Webcomic", null, new { id = Model.id }) @Html.ActionLink("Last", "Index", "Hom")</center>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <center><h2>@Model.title</h2>
+        @if (Model.url != null)
+        {
+            <img src="@Url.Content(Model.url)" />
+        }</center>
+    </div>
+</div>
